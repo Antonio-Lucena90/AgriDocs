@@ -1,0 +1,32 @@
+/* Glassmorphism navbar */
+.ppal {
+  background: rgba(6, 13, 7, 0.6) !important;
+  backdrop-filter: blur(22px) !important;
+  -webkit-backdrop-filter: blur(22px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 14px 0;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+.ppal .navbar-brand {
+  font-weight: 900 !important;
+  font-size: 1.15rem !important;
+  color: #39ff14 !important;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+.ppal .nav-link {
+  color: rgba(232, 245, 233, 0.6) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  padding: 4px 14px !important;
+  border-radius: 8px;
+}
+
+.ppal .nav-link:hover {
+  color: #39ff14 !important;
+  background: rgba(57, 255, 20, 0.06);
+}

@@ -1,0 +1,99 @@
+:root {
+  --primary:   #39ff14;
+  --secondary: #00ffd1;
+  --accent:    #aaff00;
+  --bg:        #060d07;
+  --text:      #e8f5e9;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  min-height: 100vh;
+}
+
+/* Botones de navbar (login/register) */
+.my-btn {
+  background: linear-gradient(135deg, #39ff14, #aaff00) !important;
+  border: none !important;
+  color: #060d07 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 18px rgba(57, 255, 20, 0.3) !important;
+  transition: all 0.3s ease !important;
+  border-radius: 10px !important;
+}
+
+/* ── Orbs del PublicLayout (fixed, cubren todas las páginas públicas) ── */
+.pub-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pub-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.26;
+}
+
+.pub-orb-1 {
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, #39ff14, transparent 70%);
+  top: -220px;
+  left: -220px;
+  animation: pubDriftA 14s ease-in-out infinite;
+}
+
+.pub-orb-2 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, #00ffd1, transparent 70%);
+  top: 35%;
+  right: -220px;
+  animation: pubDriftB 18s ease-in-out infinite;
+}
+
+.pub-orb-3 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #9b5de5, transparent 70%);
+  bottom: 8%;
+  left: 18%;
+  animation: pubDriftC 22s ease-in-out infinite;
+}
+
+@keyframes pubDriftA {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(70px, 90px); }
+}
+@keyframes pubDriftB {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(-90px, 70px); }
+}
+@keyframes pubDriftC {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(50px, -70px); }
+}
+
+.my-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 32px rgba(57, 255, 20, 0.55) !important;
+}
