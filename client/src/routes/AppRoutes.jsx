@@ -13,6 +13,10 @@ const ErrorPage = lazy(()=>import('../pages/publicPages/ErrorPage/ErrorPage'));
 import UserLayout from '../layouts/UserLayout';
 const UserDashboard = lazy(()=>import('../pages/userPages/UserDashboard/UserDashboard'));
 
+//FarmRoutes
+const FarmRegistration = lazy(()=>import('../pages/FarmPage/FarmRegistration/FarmRegistration'));
+
+
 
 import AdminLayout from '../layouts/AdminLayout';
 import { AuthContext } from '../contexts/AuthContext/AuthContext';
@@ -35,6 +39,7 @@ const AppRoutes = () => {
         <Route element={<PrivateRoutes user={user} requiredType={1}/>}>
           <Route element={<UserLayout/>}>
             <Route path='/userPage' element={<UserDashboard/>}/>
+            <Route path='/userPage/:user_id/farms/newFarm' element={<FarmRegistration/>}/>
           </Route>
         </Route>
 

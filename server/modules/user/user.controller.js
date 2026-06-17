@@ -30,7 +30,7 @@ class UserController {
         if (!match) {
           res.status(401).json({ message: 'Password incorrecta' });
         } else {
-          const token = generateToken(result[0].id);
+          const token = generateToken(result[0].user_id);
           res.status(200).json({ message: 'login ok', token });
         }
       }

@@ -1,0 +1,188 @@
+.farm-reg-page {
+  min-height: 100vh;
+  background: #060d07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 60px;
+  position: relative;
+}
+
+.farm-reg-page::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(57, 255, 20, 0.06), transparent 70%);
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.farm-reg-card {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 48px 44px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.farm-reg-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.farm-reg-icon {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+}
+
+.farm-reg-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.farm-reg-header p {
+  font-size: 0.88rem;
+  color: rgba(232, 245, 233, 0.4);
+}
+
+/* ── Form ── */
+.farm-reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(232, 245, 233, 0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.required {
+  color: #39ff14;
+}
+
+.farm-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 14px 18px;
+  color: #e8f5e9;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  width: 100%;
+}
+
+.farm-input::placeholder {
+  color: rgba(232, 245, 233, 0.2);
+}
+
+.farm-input:focus {
+  border-color: rgba(57, 255, 20, 0.45);
+  box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.08);
+}
+
+.farm-textarea {
+  resize: vertical;
+  min-height: 110px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+/* ── Submit ── */
+.farm-reg-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  color: #060d07;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.farm-reg-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(57, 255, 20, 0.25);
+}
+
+.farm-reg-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Error states ── */
+.input-error {
+  border-color: rgba(255, 80, 80, 0.5) !important;
+}
+
+.farm-error {
+  font-size: 0.76rem;
+  color: #ff6b6b;
+  margin-top: 2px;
+}
+
+.farm-error-global {
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 80, 80, 0.06);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  border-radius: 10px;
+}
+
+/* ── Cancel button ── */
+.farm-reg-btn-ghost {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: transparent;
+  color: rgba(232, 245, 233, 0.4);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.farm-reg-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(232, 245, 233, 0.7);
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .farm-reg-card { padding: 36px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+}

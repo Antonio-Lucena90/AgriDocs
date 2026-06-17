@@ -13,7 +13,7 @@ class UserDal {
 
   findUser = async (user_name) => {
     try {
-      let sql = 'SELECT id, password_hash FROM users WHERE user_name = ? AND is_deleted = 0'; 
+      let sql = 'SELECT user_id, password_hash FROM users WHERE user_name = ? AND is_deleted = 0';
       let result = await excuteQuery(sql, [user_name]);
       return result; 
     } catch (error) {
@@ -23,7 +23,7 @@ class UserDal {
 
   oneUser = async (values) =>{
     try{
-      let sql = 'SELECT id, name, last_name, user_name, farm_name, role FROM users WHERE id = ? AND is_deleted = 0'
+      let sql = 'SELECT user_id, name, last_name, user_name, farm_name, role FROM users WHERE user_id = ? AND is_deleted = 0'
       let result = await excuteQuery(sql, values);
       return result;
     }catch(error){

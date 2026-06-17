@@ -4,13 +4,13 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
-import userRouter from './modules/user/user.routes.js';
+import usersRouter from './modules/user/user.routes.js';
+import farmRouter from './modules/farm/farm.routes.js';
 import cors from 'cors'; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import usersRouter from './modules/user/user.routes.js';
 
 const app = express();
 
@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/api/user', usersRouter); 
+app.use('/api/farm', farmRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
