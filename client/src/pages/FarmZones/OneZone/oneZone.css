@@ -1,0 +1,242 @@
+.zone-dash {
+  min-height: 100vh;
+  background: #060d07;
+  padding: 100px 60px 60px;
+  position: relative;
+}
+
+.zone-dash::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(57, 255, 20, 0.05), transparent 70%);
+  top: -80px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.zone-dash > * { position: relative; z-index: 1; }
+
+/* ── HEADER ── */
+.zone-dash-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.zone-back-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(232, 245, 233, 0.5);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.zone-back-btn:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  color: #39ff14;
+}
+
+.zone-dash-header h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* ── BODY ── */
+.zone-dash-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 720px;
+}
+
+/* ── EDIT NAME ── */
+.zone-edit-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zone-edit-section h2 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.zone-edit-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.zone-name-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: #e8f5e9;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.zone-name-input:focus {
+  border-color: rgba(57, 255, 20, 0.45);
+  box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.08);
+}
+
+.zone-save-btn {
+  padding: 13px 24px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  color: #060d07;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.zone-save-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* ── ACTION CARDS ── */
+.zone-actions-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 16px;
+}
+
+.zone-action-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.zone-action-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+}
+
+.zone-action-card:hover {
+  background: rgba(57, 255, 20, 0.03);
+  border-color: rgba(57, 255, 20, 0.2);
+  transform: translateY(-2px);
+}
+
+.zone-action-icon {
+  font-size: 2.4rem;
+}
+
+.zone-action-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e8f5e9;
+}
+
+.zone-action-desc {
+  font-size: 0.78rem;
+  color: rgba(232, 245, 233, 0.35);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── ERROR ── */
+.zone-error {
+  font-size: 0.82rem;
+  color: #ff6b6b;
+  padding: 10px 16px;
+  background: rgba(255, 80, 80, 0.06);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  border-radius: 10px;
+  margin: 0;
+}
+
+/* ── DANGER ZONE ── */
+.zone-danger-section {
+  background: rgba(255, 80, 80, 0.02);
+  border: 1px solid rgba(255, 80, 80, 0.1);
+  border-radius: 20px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.zone-danger-info h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 120, 120, 0.8);
+  margin: 0 0 4px;
+}
+
+.zone-danger-info p {
+  font-size: 0.78rem;
+  color: rgba(232, 245, 233, 0.3);
+  margin: 0;
+}
+
+.zone-delete-btn {
+  padding: 12px 22px;
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 80, 80, 0.06);
+  color: rgba(255, 100, 100, 0.7);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.zone-delete-btn:hover {
+  background: rgba(255, 80, 80, 0.12);
+  border-color: rgba(255, 80, 80, 0.5);
+  color: #ff6b6b;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .zone-dash { padding: 100px 20px 60px; }
+  .zone-action-cards { grid-template-columns: 1fr; }
+  .zone-danger-section { flex-direction: column; align-items: flex-start; }
+  .zone-edit-row { flex-direction: column; align-items: stretch; }
+}

@@ -28,7 +28,8 @@ const RegisterPage = () => {
   const onSubmit = async () => {
     try {
       registerSchema.parse(register);
-      console.log('Validación ok');
+      await fetchData('user/register', 'POST', register)
+      navigate('/login')
     } catch (error) {
       if (error instanceof ZodError) {
         const fieldsErrors = {};
@@ -38,16 +39,13 @@ const RegisterPage = () => {
         setValErrors(fieldsErrors);
       } else {
         setValErrors({})
-        if (error.response.data.errno === 1062) {
-          setFetchError('email repetido')
+        if (error.response?.data?.errno === 1062) {
+          setFetchError('Nombre de usuario ya en uso')
         } else {
           setFetchError('Ups, hay un error chungo');
         }
       }
     }
-    const res = await fetchData('user/register', 'POST', register)
-    console.log(res);
-    navigate('/login')
   };
 
   return (

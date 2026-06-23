@@ -9,17 +9,36 @@ const RegisterPage = lazy(()=>import('../pages/AuthPage/RegisterPage/RegisterPag
 const LoginPage = lazy(()=>import('../pages/AuthPage/LoginPage/LoginPage'));
 const ErrorPage = lazy(()=>import('../pages/publicPages/ErrorPage/ErrorPage'));
 
-
+//UserRoutes
 import UserLayout from '../layouts/UserLayout';
 const UserDashboard = lazy(()=>import('../pages/userPages/UserDashboard/UserDashboard'));
 
 //FarmRoutes
 const FarmRegistration = lazy(()=>import('../pages/FarmPage/FarmRegistration/FarmRegistration'));
+const FarmDashboard = lazy(()=>import('../pages/FarmPage/FarmDashboard/FarmDashboard'));
+
+//FarmZonesRoutes
+const FarmZonesRegister = lazy(()=>import('../pages/FarmZones/FarmZonesRegister/FarmZonesRegister'));
+const FarmZoneDashboard = lazy(()=>import('../pages/FarmZones/FarmZoneDashboard/FarmZoneDashboard'));
+const OneZone = lazy(()=>import('../pages/FarmZones/OneZone/OneZone'));
+
+//IrrigationRoutes
+const IrrigationRecord = lazy(()=>import('../pages/Irrigations/IrrigationRecord/IrrigationRecord'));
+const IrrigationDashboard = lazy(()=>import('../pages/Irrigations/IrrigationDashboard/IrrigationDashboard'));
+
+//FertilizationRoutes
+const FertilizationRecord = lazy(()=>import('../pages/Fertilizations/FertilizationRecord/FertilizationRecord'));
+const FertilizationDashboard = lazy(()=>import('../pages/Fertilizations/FertilizationDashboard/FertilizationDashboard'));
+
+
 
 
 
 import AdminLayout from '../layouts/AdminLayout';
 import { AuthContext } from '../contexts/AuthContext/AuthContext';
+
+
+
 
 const AppRoutes = () => {
 
@@ -38,8 +57,26 @@ const AppRoutes = () => {
 
         <Route element={<PrivateRoutes user={user} requiredType={1}/>}>
           <Route element={<UserLayout/>}>
+            //UserRoutes
             <Route path='/userPage' element={<UserDashboard/>}/>
+
+            //FarmRoutes
             <Route path='/userPage/:user_id/farms/newFarm' element={<FarmRegistration/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/farmDashboard' element={<FarmDashboard/>}/>
+
+            //FarmZonesRoutes
+            <Route path='/userPage/:user_id/farms/:farm_id/farmZones/farmZonesRegister' element={<FarmZonesRegister/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/farmZones/farmZonesDashboard' element={<FarmZoneDashboard/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/farmZones/:zone_id' element={<OneZone/>}/>
+
+            //IrrigationRoutes
+            <Route path='/userPage/:user_id/farms/:farm_id/irrigationRecord' element={<IrrigationRecord/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/irrigationDashboard' element={<IrrigationDashboard/>}/>
+
+            //FertilizationRoutes
+            <Route path='/userPage/:user_id/farms/:farm_id/fertilizationRecord' element={<FertilizationRecord/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/fertilizationDashboard' element={<FertilizationDashboard/>}/>
+
           </Route>
         </Route>
 

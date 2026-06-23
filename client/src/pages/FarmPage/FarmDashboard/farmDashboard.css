@@ -1,0 +1,248 @@
+.farm-dash {
+  min-height: 100vh;
+  background: #060d07;
+  padding: 100px 60px 60px;
+  position: relative;
+}
+
+.farm-dash::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(57, 255, 20, 0.06), transparent 70%);
+  top: -80px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.farm-dash > * { position: relative; z-index: 1; }
+
+/* ── HEADER ── */
+.farm-dash-header {
+  margin-bottom: 48px;
+}
+
+.farm-dash-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.farm-dash-title h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.farm-back-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(232, 245, 233, 0.5);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.farm-back-btn:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  color: #39ff14;
+}
+
+/* ── INFO CARDS ── */
+.farm-info-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 18px 20px;
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-card-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(232, 245, 233, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.info-card-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e8f5e9;
+}
+
+.info-card-desc {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: rgba(232, 245, 233, 0.55);
+  line-height: 1.4;
+}
+
+/* ── BODY SECTIONS ── */
+.farm-dash-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.fd-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fd-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.fd-add-btn {
+  background: rgba(57, 255, 20, 0.07);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  color: #39ff14;
+  padding: 7px 16px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fd-add-btn:hover {
+  background: rgba(57, 255, 20, 0.13);
+  box-shadow: 0 0 14px rgba(57, 255, 20, 0.15);
+}
+
+/* ── ITEM CARDS ── */
+.fd-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fd-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.fd-card:hover {
+  border-color: rgba(57, 255, 20, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.fd-card-icon {
+  font-size: 1.3rem;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fd-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fd-card-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e8f5e9;
+}
+
+.fd-card-meta {
+  font-size: 0.76rem;
+  color: rgba(232, 245, 233, 0.4);
+}
+
+.fd-card-arrow {
+  color: rgba(232, 245, 233, 0.25);
+  font-size: 1rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.fd-card:hover .fd-card-arrow {
+  color: #39ff14;
+  transform: translateX(3px);
+}
+
+/* ── BADGES ── */
+.fd-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.fd-badge.done {
+  background: rgba(57, 255, 20, 0.1);
+  color: #39ff14;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+.fd-badge.pending {
+  background: rgba(255, 160, 0, 0.1);
+  color: #ffaa00;
+  border: 1px solid rgba(255, 160, 0, 0.2);
+}
+
+.fd-empty {
+  font-size: 0.85rem;
+  color: rgba(232, 245, 233, 0.25);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .farm-info-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .farm-dash { padding: 90px 20px 40px; }
+  .farm-info-cards { grid-template-columns: 1fr 1fr; }
+}

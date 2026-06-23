@@ -1,0 +1,249 @@
+.zones-reg-page {
+  min-height: 100vh;
+  background: #060d07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 60px;
+  position: relative;
+}
+
+.zones-reg-page::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(57, 255, 20, 0.06), transparent 70%);
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.zones-reg-card {
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 48px 44px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Header ── */
+.zones-reg-header {
+  text-align: center;
+}
+
+.zones-reg-icon {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+}
+
+.zones-reg-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.zones-reg-header p {
+  font-size: 0.88rem;
+  color: rgba(232, 245, 233, 0.4);
+}
+
+/* ── Zonas existentes ── */
+.zones-existing {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zones-existing-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+}
+
+.zone-existing-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(57, 255, 20, 0.03);
+  border: 1px solid rgba(57, 255, 20, 0.1);
+  border-radius: 10px;
+}
+
+.zone-existing-name {
+  font-size: 0.88rem;
+  color: rgba(232, 245, 233, 0.5);
+}
+
+/* ── Zona rows ── */
+.zones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zone-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.zone-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  color: #39ff14;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.zone-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: #e8f5e9;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.zone-input::placeholder {
+  color: rgba(232, 245, 233, 0.2);
+}
+
+.zone-input:focus {
+  border-color: rgba(57, 255, 20, 0.45);
+  box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.08);
+}
+
+.zone-remove-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 80, 80, 0.06);
+  border: 1px solid rgba(255, 80, 80, 0.15);
+  color: rgba(255, 100, 100, 0.6);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zone-remove-btn:hover:not(:disabled) {
+  background: rgba(255, 80, 80, 0.12);
+  color: #ff6b6b;
+  border-color: rgba(255, 80, 80, 0.3);
+}
+
+.zone-remove-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ── Add zone btn ── */
+.zones-add-btn {
+  background: transparent;
+  border: 1.5px dashed rgba(57, 255, 20, 0.25);
+  border-radius: 12px;
+  color: rgba(57, 255, 20, 0.6);
+  padding: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.zones-add-btn:hover {
+  border-color: rgba(57, 255, 20, 0.5);
+  color: #39ff14;
+  background: rgba(57, 255, 20, 0.03);
+}
+
+/* ── Error ── */
+.zones-error {
+  font-size: 0.82rem;
+  color: #ff6b6b;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 80, 80, 0.06);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  border-radius: 10px;
+}
+
+/* ── Actions ── */
+.zones-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.zones-submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  color: #060d07;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.zones-submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(57, 255, 20, 0.25);
+}
+
+.zones-cancel-btn {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: transparent;
+  color: rgba(232, 245, 233, 0.4);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.zones-cancel-btn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(232, 245, 233, 0.7);
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .zones-reg-card { padding: 36px 20px; }
+}

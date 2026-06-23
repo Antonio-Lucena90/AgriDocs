@@ -7,7 +7,7 @@ import './navbarUser.css';
 
 export const NavbarUser = () => {
   const navigate = useNavigate();
-  const { logOut, user } = useContext(AuthContext);
+  const { logOut, user, currentFarmId } = useContext(AuthContext);
 
   return (
     <Navbar expand="lg" className="navbar-user">
@@ -20,8 +20,23 @@ export const NavbarUser = () => {
 
         <Navbar.Collapse id="user-navbar-nav">
           <Nav className="me-auto text-center text-lg-start">
-            <Nav.Link as={NavLink} to="/profile">
-              Perfil
+            <Nav.Link as={NavLink} to="/userPage">
+              Tu Finca
+            </Nav.Link>
+          </Nav>
+          <Nav className="me-auto text-center text-lg-start">
+            <Nav.Link as={NavLink} to={`/userPage/${user?.user_id}/farms/${currentFarmId}/farmZones/farmZonesDashboard`}>
+              Zonas de tu Finca 
+            </Nav.Link>
+          </Nav>
+          <Nav className="me-auto text-center text-lg-start">
+            <Nav.Link as={NavLink} to={`/userPage/${user?.user_id}/farms/${currentFarmId}/irrigationDashboard`}>
+              Riegos
+            </Nav.Link>
+          </Nav>
+          <Nav className="me-auto text-center text-lg-start">
+            <Nav.Link as={NavLink} to={`/userPage/${user?.user_id}/farms/${currentFarmId}/fertilizationDashboard`}>
+              Abonos 
             </Nav.Link>
           </Nav>
 

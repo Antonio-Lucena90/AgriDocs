@@ -4,8 +4,15 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
+
 import usersRouter from './modules/user/user.routes.js';
 import farmRouter from './modules/farm/farm.routes.js';
+import farmZoneRouter from './modules/farmZones/farmZones.routes.js';
+import irrigationRouter from './modules/irrigation/irrigation.routes.js';
+import harvestRouter from './modules/harvest/harvest.routes.js';
+import fertilizedRouter from './modules/fertilized/fertilized.routes.js';
+
+
 import cors from 'cors'; 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -24,6 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/user', usersRouter); 
 app.use('/api/farm', farmRouter); 
+app.use('/api/farmZone', farmZoneRouter); 
+app.use('/api/irrigation', irrigationRouter); 
+app.use('/api/harvest', harvestRouter);
+app.use('/api/fertilized', fertilizedRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,217 @@
+.fert-page {
+  min-height: 100vh;
+  background: #060d07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 24px 60px;
+  position: relative;
+}
+
+.fert-page::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(57, 255, 20, 0.05), transparent 70%);
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.fert-card {
+  width: 100%;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 48px 44px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Header ── */
+.fert-header { text-align: center; }
+
+.fert-icon {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+}
+
+.fert-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.fert-header p {
+  font-size: 0.88rem;
+  color: rgba(232, 245, 233, 0.4);
+}
+
+/* ── Fecha ── */
+.fert-calendar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fert-month-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.fert-date-input {
+  width: 100%;
+  background: rgba(57, 255, 20, 0.04);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 16px;
+  padding: 18px 20px;
+  color: #e8f5e9;
+  font-size: 1.1rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  color-scheme: dark;
+}
+
+.fert-date-input:focus {
+  border-color: rgba(57, 255, 20, 0.5);
+  box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.08);
+}
+
+/* ── Campos ── */
+.fert-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fert-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(232, 245, 233, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.fert-required { color: #39ff14; }
+
+.fert-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: #e8f5e9;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  width: 100%;
+  color-scheme: dark;
+}
+
+.fert-input::placeholder { color: rgba(232, 245, 233, 0.2); }
+
+.fert-input:focus {
+  border-color: rgba(57, 255, 20, 0.4);
+  box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.07);
+}
+
+.fert-select { cursor: pointer; }
+.fert-select option { background: #0d1f0f; }
+
+.fert-textarea {
+  resize: vertical;
+  min-height: 90px;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+/* ── Error ── */
+.fert-error {
+  font-size: 0.82rem;
+  color: #ff6b6b;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 80, 80, 0.06);
+  border: 1px solid rgba(255, 80, 80, 0.2);
+  border-radius: 10px;
+  margin: 0;
+}
+
+/* ── Actions ── */
+.fert-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fert-submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  color: #060d07;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.fert-submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(57, 255, 20, 0.25);
+}
+
+.fert-cancel-btn {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: transparent;
+  color: rgba(232, 245, 233, 0.4);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.fert-cancel-btn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(232, 245, 233, 0.7);
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .fert-card { padding: 36px 20px; }
+  .fert-row { grid-template-columns: 1fr; }
+  .fert-date-input { font-size: 1rem; padding: 16px; }
+}

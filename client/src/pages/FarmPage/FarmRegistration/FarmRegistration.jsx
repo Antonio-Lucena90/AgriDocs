@@ -14,7 +14,7 @@ const initialValue = {
 }
 
 const FarmRegistration = () => {
-  const { token } = useContext(AuthContext)
+  const { token, setFarms } = useContext(AuthContext)
   const navigate = useNavigate()
 
   const [form, setForm] = useState(initialValue)
@@ -34,6 +34,9 @@ const FarmRegistration = () => {
       farmSchema.parse(form)
 
       await fetchData('farm/createFarm', 'POST', form, token)
+
+      const res = await fetchData('farm/myFarms', 'GET', null, token)
+      setFarms(res.data.farms)
 
       navigate(`/userPage`)
 
