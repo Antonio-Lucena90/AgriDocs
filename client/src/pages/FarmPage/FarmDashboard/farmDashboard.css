@@ -3,6 +3,8 @@
   background: #060d07;
   padding: 100px 60px 60px;
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .farm-dash::before {
@@ -94,6 +96,31 @@
   font-weight: 400;
   color: rgba(232, 245, 233, 0.55);
   line-height: 1.4;
+}
+
+/* ── BOTÓN AVERÍA ── */
+.fd-incident-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: rgba(255, 160, 0, 0.08);
+  border: 1px solid rgba(255, 160, 0, 0.35);
+  color: #ffaa00;
+  padding: 16px 24px;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: all 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.fd-incident-btn:hover {
+  background: rgba(255, 160, 0, 0.14);
+  box-shadow: 0 0 20px rgba(255, 160, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 /* ── BODY SECTIONS ── */

@@ -14,13 +14,19 @@ import UserLayout from '../layouts/UserLayout';
 const UserDashboard = lazy(()=>import('../pages/userPages/UserDashboard/UserDashboard'));
 
 //FarmRoutes
+const FarmSelector = lazy(()=>import('../pages/FarmPage/FarmSelector/FarmSelector'));
 const FarmRegistration = lazy(()=>import('../pages/FarmPage/FarmRegistration/FarmRegistration'));
 const FarmDashboard = lazy(()=>import('../pages/FarmPage/FarmDashboard/FarmDashboard'));
+const FarmWeather = lazy(()=>import('../pages/FarmPage/FarmWeather/FarmWeather'));
 
 //FarmZonesRoutes
 const FarmZonesRegister = lazy(()=>import('../pages/FarmZones/FarmZonesRegister/FarmZonesRegister'));
 const FarmZoneDashboard = lazy(()=>import('../pages/FarmZones/FarmZoneDashboard/FarmZoneDashboard'));
 const OneZone = lazy(()=>import('../pages/FarmZones/OneZone/OneZone'));
+
+//IncidentsRoutes
+const IncidentsRegister = lazy(()=>import('../pages/Incidents/IncidentsRegister/IncidentsRegister'));
+const IncidentsDashboard = lazy(()=>import('../pages/Incidents/IncidentsDashboard/IncidentsDashboard'));
 
 //IrrigationRoutes
 const IrrigationRecord = lazy(()=>import('../pages/Irrigations/IrrigationRecord/IrrigationRecord'));
@@ -56,6 +62,8 @@ const AppRoutes = () => {
         </Route>
 
         <Route element={<PrivateRoutes user={user} requiredType={1}/>}>
+          <Route path='/selectFarm' element={<FarmSelector/>}/>
+
           <Route element={<UserLayout/>}>
             //UserRoutes
             <Route path='/userPage' element={<UserDashboard/>}/>
@@ -63,11 +71,16 @@ const AppRoutes = () => {
             //FarmRoutes
             <Route path='/userPage/:user_id/farms/newFarm' element={<FarmRegistration/>}/>
             <Route path='/userPage/:user_id/farms/:farm_id/farmDashboard' element={<FarmDashboard/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/farmWeather' element={<FarmWeather/>}/>
 
             //FarmZonesRoutes
             <Route path='/userPage/:user_id/farms/:farm_id/farmZones/farmZonesRegister' element={<FarmZonesRegister/>}/>
             <Route path='/userPage/:user_id/farms/:farm_id/farmZones/farmZonesDashboard' element={<FarmZoneDashboard/>}/>
             <Route path='/userPage/:user_id/farms/:farm_id/farmZones/:zone_id' element={<OneZone/>}/>
+
+            {/* IncidentsRoutes */}
+            <Route path='/userPage/:user_id/farms/:farm_id/incidentRegister' element={<IncidentsRegister/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/incidentsDashboard' element={<IncidentsDashboard/>}/>
 
             //IrrigationRoutes
             <Route path='/userPage/:user_id/farms/:farm_id/irrigationRecord' element={<IrrigationRecord/>}/>

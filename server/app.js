@@ -11,6 +11,7 @@ import farmZoneRouter from './modules/farmZones/farmZones.routes.js';
 import irrigationRouter from './modules/irrigation/irrigation.routes.js';
 import harvestRouter from './modules/harvest/harvest.routes.js';
 import fertilizedRouter from './modules/fertilized/fertilized.routes.js';
+import incidentsRouter from './modules/incidents/incidents.routes.js';
 
 
 import cors from 'cors'; 
@@ -35,6 +36,7 @@ app.use('/api/farmZone', farmZoneRouter);
 app.use('/api/irrigation', irrigationRouter); 
 app.use('/api/harvest', harvestRouter);
 app.use('/api/fertilized', fertilizedRouter); 
+app.use('/api/incidents', incidentsRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

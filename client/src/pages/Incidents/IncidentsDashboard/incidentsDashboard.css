@@ -1,0 +1,267 @@
+.inc-dash {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 60px 60px;
+}
+
+.inc-dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.inc-dash-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffaa00, #ff6600);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.inc-dash-new-btn {
+  background: rgba(255, 160, 0, 0.1);
+  border: 1px solid rgba(255, 160, 0, 0.35);
+  color: #ffaa00;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.inc-dash-new-btn:hover {
+  background: rgba(255, 160, 0, 0.18);
+}
+
+.inc-dash-empty {
+  text-align: center;
+  color: rgba(232, 245, 233, 0.3);
+  padding: 60px 0;
+  font-size: 0.95rem;
+}
+
+/* ── TABLA ── */
+.inc-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.inc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.inc-table thead tr {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.inc-table th {
+  text-align: left;
+  padding: 14px 16px;
+  color: rgba(232, 245, 233, 0.45);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.inc-table td {
+  padding: 14px 16px;
+  color: #e8f5e9;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: middle;
+}
+
+.inc-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.inc-td-desc {
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(232, 245, 233, 0.7) !important;
+}
+
+/* ── BADGES ── */
+.inc-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.inc-badge-pending {
+  background: rgba(255, 160, 0, 0.12);
+  color: #ffaa00;
+  border: 1px solid rgba(255, 160, 0, 0.3);
+}
+
+.inc-badge-in_progress {
+  background: rgba(33, 150, 243, 0.12);
+  color: #64b5f6;
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.inc-badge-resolved {
+  background: rgba(57, 255, 20, 0.1);
+  color: #39ff14;
+  border: 1px solid rgba(57, 255, 20, 0.25);
+}
+
+/* ── BOTÓN EDITAR ── */
+.inc-edit-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e8f5e9;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.inc-edit-btn:hover {
+  border-color: rgba(57, 255, 20, 0.35);
+  color: #39ff14;
+}
+
+/* ── MODAL ── */
+.inc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.inc-modal {
+  background: #0d1f0f;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.inc-modal h2 {
+  font-size: 1.2rem;
+  color: #e8f5e9;
+  margin: 0;
+}
+
+.inc-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inc-modal-field label {
+  color: #a5d6a7;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.inc-modal-field input,
+.inc-modal-field textarea,
+.inc-modal-field select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 10px;
+  color: #e8f5e9;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.inc-modal-field input:focus,
+.inc-modal-field textarea:focus,
+.inc-modal-field select:focus {
+  border-color: #39ff14;
+}
+
+.inc-modal-field select option {
+  background: #0d1f0f;
+  color: #e8f5e9;
+}
+
+.inc-modal-field textarea {
+  resize: vertical;
+}
+
+.inc-modal-field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+  cursor: pointer;
+}
+
+.inc-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.inc-cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a5d6a7;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.inc-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.inc-submit-btn {
+  background: linear-gradient(135deg, #39ff14, #1adf00);
+  color: #060d07;
+  border: none;
+  padding: 0.65rem 1.8rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.inc-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .inc-dash {
+    padding: 90px 16px 40px;
+  }
+
+  .inc-table th,
+  .inc-table td {
+    padding: 12px 10px;
+  }
+
+  .inc-modal {
+    margin: 1rem;
+  }
+}

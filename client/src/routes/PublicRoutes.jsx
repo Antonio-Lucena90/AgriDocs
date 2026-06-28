@@ -9,7 +9,7 @@ export const PublicRoutes = () => {
   useEffect(()=>{
     if(user){
       if(user.role === 2) navigate('/adminPage')
-      if(user.role === 1) navigate('/userPage')
+      if(user.role === 1) navigate('/selectFarm')
     }
   },[user])
 

@@ -50,6 +50,14 @@ const FarmDashboard = () => {
         </div>
       </div>
 
+      {/* ── BOTÓN AVERÍA ── */}
+      <button
+        className="fd-incident-btn"
+        onClick={() => navigate(`/userPage/${user?.user_id}/farms/${farm_id}/incidentRegister`)}
+      >
+        ⚠️ Registrar avería
+      </button>
+
       {/* ── SECCIONES ── */}
       <div className="farm-dash-body">
         {/* ZONAS */}
@@ -100,7 +108,6 @@ const FarmDashboard = () => {
                     {irr.duration_minutes ? `${irr.duration_minutes} min` : '—'}
                     {irr.total_liters ? ` · ${irr.total_liters} L` : ''}
                   </span>
-                  <button></button>
                 </div>
               </div>
             )) : (
@@ -113,7 +120,7 @@ const FarmDashboard = () => {
         <div className="fd-section">
           <div className="fd-section-head">
             <p className="section-title">Abonados</p>
-            <button className="fd-add-btn" onClick={()=>navigate(`/userPage/${user?.user_id}/farms/${farm_id}/fertilizationRecord`)}>+ Nuevo abonado</button>
+            <button className="fd-add-btn" onClick={() => navigate(`/userPage/${user?.user_id}/farms/${farm_id}/fertilizationRecord`)}>+ Nuevo abonado</button>
           </div>
           <div className="fd-cards">
             {fertilizations.length > 0 ? fertilizations.map((fert) => (

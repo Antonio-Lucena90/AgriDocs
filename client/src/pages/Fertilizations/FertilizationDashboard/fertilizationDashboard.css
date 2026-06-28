@@ -1,0 +1,313 @@
+.fert-dash {
+  min-height: 100vh;
+  background: #060d07;
+  padding: 100px 60px 60px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fert-dash::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(57, 255, 20, 0.05), transparent 70%);
+  top: -80px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fert-dash > * { position: relative; z-index: 1; }
+
+/* ── HEADER ── */
+.fert-dash-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.fert-back-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(232, 245, 233, 0.5);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fert-back-btn:hover {
+  border-color: rgba(57, 255, 20, 0.4);
+  color: #39ff14;
+}
+
+.fert-dash-header h1 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* ── LAYOUT ── */
+.fert-dash-body {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+  max-width: 1100px;
+}
+
+/* ── CALENDAR CARD ── */
+.fcal-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.fcal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.fcal-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(232, 245, 233, 0.5);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fcal-nav-btn:hover {
+  border-color: rgba(57, 255, 20, 0.3);
+  color: #39ff14;
+}
+
+.fcal-month-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e8f5e9;
+  text-transform: capitalize;
+}
+
+.fcal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.fcal-weekday {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+}
+
+.fcal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.fcal-day {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(232, 245, 233, 0.45);
+  cursor: pointer;
+  transition: all 0.2s;
+  gap: 3px;
+}
+
+.fcal-day.empty { pointer-events: none; }
+
+.fcal-day.has-fertilization {
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  color: #e8f5e9;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.08);
+}
+
+.fcal-day.has-fertilization:hover {
+  background: rgba(57, 255, 20, 0.15);
+  border-color: rgba(57, 255, 20, 0.5);
+  transform: scale(1.05);
+}
+
+.fcal-day.is-today {
+  border: 1px solid rgba(232, 245, 233, 0.15);
+  color: rgba(232, 245, 233, 0.7);
+}
+
+.fcal-day.selected {
+  background: rgba(57, 255, 20, 0.15);
+  border-color: #39ff14;
+  color: #39ff14;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+.fcal-leaf { font-size: 0.55rem; opacity: 0.7; }
+
+.fcal-count {
+  font-size: 0.6rem;
+  background: rgba(57, 255, 20, 0.2);
+  border-radius: 4px;
+  padding: 1px 4px;
+  color: #39ff14;
+  font-weight: 700;
+}
+
+/* ── STATS ── */
+.fert-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.fert-stat {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fert-stat-label {
+  font-size: 0.68rem;
+  color: rgba(232, 245, 233, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fert-stat-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── DETAIL PANEL ── */
+.fert-detail-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fert-detail-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+}
+
+.fert-detail-card {
+  background: rgba(57, 255, 20, 0.03);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fert-detail-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #39ff14;
+}
+
+.fert-detail-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.fert-dfield {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fert-dfield-label {
+  font-size: 0.68rem;
+  color: rgba(232, 245, 233, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fert-dfield-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e8f5e9;
+}
+
+.fert-dfield-notes { grid-column: 1 / -1; }
+
+.fert-empty-detail {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(232, 245, 233, 0.2);
+}
+
+.fert-new-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  color: #060d07;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 4px;
+}
+
+.fert-new-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .fert-dash { padding: 100px 20px 60px; }
+  .fert-dash-body { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,333 @@
+.irr-dash {
+  min-height: 100vh;
+  background: #060d07;
+  padding: 100px 60px 60px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.irr-dash::before {
+  content: '';
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 180, 255, 0.05), transparent 70%);
+  top: -80px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.irr-dash > * { position: relative; z-index: 1; }
+
+/* ── HEADER ── */
+.irr-dash-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.irr-back-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(232, 245, 233, 0.5);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.irr-back-btn:hover {
+  border-color: rgba(0, 180, 255, 0.4);
+  color: #00b4ff;
+}
+
+.irr-dash-header h1 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #00b4ff, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* ── LAYOUT ── */
+.irr-dash-body {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
+  align-items: start;
+  max-width: 1100px;
+}
+
+/* ── CALENDAR CARD ── */
+.cal-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 24px;
+  padding: 32px;
+}
+
+/* ── MONTH NAV ── */
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.cal-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(232, 245, 233, 0.5);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cal-nav-btn:hover {
+  border-color: rgba(0, 180, 255, 0.3);
+  color: #00b4ff;
+}
+
+.cal-month-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e8f5e9;
+  text-transform: capitalize;
+}
+
+/* ── GRID HEADER ── */
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.cal-weekday {
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+}
+
+/* ── GRID DAYS ── */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(232, 245, 233, 0.45);
+  cursor: default;
+  transition: all 0.2s;
+  position: relative;
+  gap: 3px;
+}
+
+.cal-day.empty {
+  pointer-events: none;
+}
+
+.cal-day.has-irrigation {
+  background: rgba(0, 180, 255, 0.1);
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  color: #e8f5e9;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.1);
+}
+
+.cal-day.has-irrigation:hover {
+  background: rgba(0, 180, 255, 0.18);
+  border-color: rgba(0, 180, 255, 0.5);
+  box-shadow: 0 0 16px rgba(0, 180, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.cal-day.is-today {
+  border: 1px solid rgba(232, 245, 233, 0.15);
+  color: rgba(232, 245, 233, 0.7);
+}
+
+.cal-day.is-today.has-irrigation {
+  border-color: rgba(0, 180, 255, 0.5);
+}
+
+.cal-day.selected {
+  background: rgba(0, 180, 255, 0.22);
+  border-color: #00b4ff;
+  color: #00ffd1;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.25);
+}
+
+.cal-drop {
+  font-size: 0.55rem;
+  opacity: 0.7;
+}
+
+.cal-count {
+  font-size: 0.6rem;
+  background: rgba(0, 180, 255, 0.3);
+  border-radius: 4px;
+  padding: 1px 4px;
+  color: #00ffd1;
+  font-weight: 700;
+}
+
+/* ── DETAIL PANEL ── */
+.irr-detail-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.irr-detail-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(232, 245, 233, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
+}
+
+.irr-detail-card {
+  background: rgba(0, 180, 255, 0.04);
+  border: 1px solid rgba(0, 180, 255, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.irr-detail-date {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #00b4ff;
+  text-transform: capitalize;
+}
+
+.irr-detail-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.irr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.irr-field-label {
+  font-size: 0.68rem;
+  color: rgba(232, 245, 233, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.irr-field-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e8f5e9;
+}
+
+.irr-field-notes {
+  grid-column: 1 / -1;
+}
+
+.irr-empty-detail {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(232, 245, 233, 0.2);
+}
+
+/* ── STATS ── */
+.irr-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.irr-stat {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.irr-stat-label {
+  font-size: 0.68rem;
+  color: rgba(232, 245, 233, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.irr-stat-value {
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00b4ff, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── NEW BTN ── */
+.irr-new-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00b4ff, #00ffd1);
+  color: #060d07;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 4px;
+}
+
+.irr-new-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .irr-dash { padding: 100px 20px 60px; }
+  .irr-dash-body { grid-template-columns: 1fr; }
+}

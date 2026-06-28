@@ -1,0 +1,172 @@
+.inc-reg {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.inc-reg-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.inc-reg-header h1 {
+  font-size: 1.6rem;
+  color: #e8f5e9;
+  margin: 0;
+}
+
+.inc-back-btn {
+  background: transparent;
+  border: 1px solid #39ff1440;
+  color: #39ff14;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.inc-back-btn:hover {
+  background: #39ff1415;
+}
+
+.inc-reg-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.inc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inc-field label {
+  color: #a5d6a7;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.inc-required {
+  color: #ff5252;
+  margin-left: 2px;
+}
+
+.inc-optional {
+  color: #6a9a6e;
+  font-size: 0.8rem;
+}
+
+.inc-field input,
+.inc-field textarea,
+.inc-field select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 10px;
+  color: #e8f5e9;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.inc-field input:focus,
+.inc-field textarea:focus,
+.inc-field select:focus {
+  border-color: #39ff14;
+}
+
+.inc-field input::placeholder,
+.inc-field textarea::placeholder {
+  color: #4a7a4e;
+}
+
+.inc-field select option {
+  background: #0d1f0f;
+  color: #e8f5e9;
+}
+
+.inc-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.inc-field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+  cursor: pointer;
+}
+
+.inc-error {
+  color: #ff5252;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.inc-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.inc-cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a5d6a7;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.inc-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.inc-submit-btn {
+  background: linear-gradient(135deg, #39ff14, #1adf00);
+  color: #060d07;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.inc-submit-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.inc-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .inc-reg-form {
+    padding: 1.2rem;
+  }
+
+  .inc-actions {
+    flex-direction: column-reverse;
+  }
+
+  .inc-cancel-btn,
+  .inc-submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

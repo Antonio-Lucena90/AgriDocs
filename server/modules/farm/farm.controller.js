@@ -15,9 +15,9 @@ class FarmController {
 
   createFarm = async (req, res) => {
     const { user_id } = req;
-    const { name, location, hectares, description } = req.body;
+    const { name, location, country_code, hectares, description } = req.body;
     try {
-      const result = await farmDal.createFarm([user_id, name, location || null, hectares || null, description || null]);
+      const result = await farmDal.createFarm([user_id, name, location || null, country_code || 'ES', hectares || null, description || null]);
       res.status(201).json({ message: 'Finca creada', farm_id: result.insertId });
     } catch (error) {
       console.log('createFarm error:', error);

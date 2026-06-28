@@ -40,7 +40,7 @@ const LoginPage = () => {
       localStorage.setItem('token', token)
       setUser(resUser.data.user);
       setToken(token);
-      navigate('/userPage');
+      navigate('/selectFarm');
 
     } catch (error) {
           if(error instanceof ZodError){

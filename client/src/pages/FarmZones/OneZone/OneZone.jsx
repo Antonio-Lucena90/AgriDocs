@@ -76,11 +76,6 @@ const OneZone = () => {
           <p className="zone-actions-title">Gestión de la zona</p>
           <div className="zone-action-cards">
             <div className="zone-action-card">
-              <span className="zone-action-icon">⚠️</span>
-              <span className="zone-action-label">Averías</span>
-              <span className="zone-action-desc">Registra incidencias y fallos en esta zona</span>
-            </div>
-            <div className="zone-action-card">
               <span className="zone-action-icon">🌾</span>
               <span className="zone-action-label">Cosecha</span>
               <span className="zone-action-desc">Anota la cosecha y producción obtenida</span>

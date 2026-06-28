@@ -20,7 +20,7 @@ export const NavbarUser = () => {
 
         <Navbar.Collapse id="user-navbar-nav">
           <Nav className="me-auto text-center text-lg-start">
-            <Nav.Link as={NavLink} to="/userPage">
+            <Nav.Link as={NavLink} to={`/userPage/${user?.user_id}/farms/${currentFarmId}/farmDashboard`}>
               Tu Finca
             </Nav.Link>
           </Nav>
@@ -37,6 +37,16 @@ export const NavbarUser = () => {
           <Nav className="me-auto text-center text-lg-start">
             <Nav.Link as={NavLink} to={`/userPage/${user?.user_id}/farms/${currentFarmId}/fertilizationDashboard`}>
               Abonos 
+            </Nav.Link>
+          </Nav>
+          <Nav className="me-auto text-center text-lg-start">
+            <Nav.Link as={NavLink} to={`/userPage/${user?.user_id}/farms/${currentFarmId}/incidentsDashboard`}>
+              Averías
+            </Nav.Link>
+          </Nav>
+          <Nav className="me-auto text-center text-lg-start">
+            <Nav.Link as={NavLink} to={`/userPage/${user?.user_id}/farms/${currentFarmId}/farmWeather`}>
+              El tiempo en tu Finca 
             </Nav.Link>
           </Nav>
 

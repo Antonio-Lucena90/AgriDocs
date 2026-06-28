@@ -6,9 +6,27 @@ import { fetchData } from "../../../helpers/axiosHelpers"
 import { farmSchema } from "../../../schemas/FarmSchema"
 import "./FarmRegistration.css"
 
+const COUNTRIES = [
+  { code: 'ES', name: 'España' },
+  { code: 'MX', name: 'México' },
+  { code: 'AR', name: 'Argentina' },
+  { code: 'CO', name: 'Colombia' },
+  { code: 'PE', name: 'Perú' },
+  { code: 'CL', name: 'Chile' },
+  { code: 'VE', name: 'Venezuela' },
+  { code: 'EC', name: 'Ecuador' },
+  { code: 'BO', name: 'Bolivia' },
+  { code: 'PY', name: 'Paraguay' },
+  { code: 'UY', name: 'Uruguay' },
+  { code: 'GT', name: 'Guatemala' },
+  { code: 'CR', name: 'Costa Rica' },
+  { code: 'PT', name: 'Portugal' },
+]
+
 const initialValue = {
   name: '',
   location: '',
+  country_code: 'ES',
   hectares: '',
   description: '',
 }
@@ -38,7 +56,7 @@ const FarmRegistration = () => {
       const res = await fetchData('farm/myFarms', 'GET', null, token)
       setFarms(res.data.farms)
 
-      navigate(`/userPage`)
+      navigate(`/selectFarm`)
 
     } catch (error) {
       if (error instanceof ZodError) {
@@ -82,17 +100,32 @@ const FarmRegistration = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="location">Ubicación</label>
+              <label htmlFor="location">Ciudad / Municipio</label>
               <input
                 id="location"
                 name="location"
                 type="text"
-                placeholder="Ej: Jaén, Andalucía"
+                placeholder="Ej: Jaén"
                 className={`farm-input ${valErrors.location ? 'input-error' : ''}`}
                 value={form.location}
                 onChange={handleChange}
               />
               {valErrors.location && <p className="farm-error">{valErrors.location}</p>}
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="country_code">País</label>
+              <select
+                id="country_code"
+                name="country_code"
+                className="farm-input"
+                value={form.country_code}
+                onChange={handleChange}
+              >
+                {COUNTRIES.map(c => (
+                  <option key={c.code} value={c.code}>{c.name}</option>
+                ))}
+              </select>
             </div>
 
             <div className="form-group">
@@ -132,7 +165,7 @@ const FarmRegistration = () => {
             Crear finca
           </button>
 
-          <button type="button" className="farm-reg-btn-ghost" onClick={() => navigate('/userPage')}>
+          <button type="button" className="farm-reg-btn-ghost" onClick={() => navigate('/selectFarm')}>
             Cancelar
           </button>
 

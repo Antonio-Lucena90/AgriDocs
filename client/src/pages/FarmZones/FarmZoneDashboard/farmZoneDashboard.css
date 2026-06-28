@@ -3,6 +3,8 @@
   background: #060d07;
   padding: 100px 60px 60px;
   position: relative;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .zones-dash::before {

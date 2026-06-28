@@ -18,4 +18,5 @@ export const farmSchema = z.object({
     .max(1000, 'Descripción demasiado larga')
     .optional()
     .or(z.literal('')),
+  country_code: z.string().length(2, 'Selecciona un país'),
 })
