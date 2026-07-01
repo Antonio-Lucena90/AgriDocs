@@ -5,8 +5,8 @@ import {PrivateRoutes} from './PrivateRoutes';
 
 import PublicLayout from '../layouts/PublicLayout';
 const HomePage = lazy(()=>import('../pages/publicPages/Home/Home'));
-const RegisterPage = lazy(()=>import('../pages/AuthPage/RegisterPage/RegisterPage'));
-const LoginPage = lazy(()=>import('../pages/AuthPage/LoginPage/LoginPage'));
+const RegisterPage = lazy(()=>import('../pages/publicPages/AuthPage/RegisterPage/RegisterPage'));
+const LoginPage = lazy(()=>import('../pages/publicPages/AuthPage/LoginPage/LoginPage'));
 const ErrorPage = lazy(()=>import('../pages/publicPages/ErrorPage/ErrorPage'));
 
 //UserRoutes
@@ -28,6 +28,10 @@ const OneZone = lazy(()=>import('../pages/FarmZones/OneZone/OneZone'));
 const IncidentsRegister = lazy(()=>import('../pages/Incidents/IncidentsRegister/IncidentsRegister'));
 const IncidentsDashboard = lazy(()=>import('../pages/Incidents/IncidentsDashboard/IncidentsDashboard'));
 
+//HarvestRoutes
+const HarvestRegister = lazy(()=>import('../pages/Harvest/HarvestRegister/HarvestRegister'));
+const HarvestDashboard = lazy(()=>import('../pages/Harvest/HarvestDashboard/HarvestDashboard'));
+
 //IrrigationRoutes
 const IrrigationRecord = lazy(()=>import('../pages/Irrigations/IrrigationRecord/IrrigationRecord'));
 const IrrigationDashboard = lazy(()=>import('../pages/Irrigations/IrrigationDashboard/IrrigationDashboard'));
@@ -40,8 +44,13 @@ const FertilizationDashboard = lazy(()=>import('../pages/Fertilizations/Fertiliz
 
 
 
-import AdminLayout from '../layouts/AdminLayout';
 import { AuthContext } from '../contexts/AuthContext/AuthContext';
+
+
+import AdminLayout from '../layouts/AdminLayout';
+const AdminDashboard = lazy(()=>import('../pages/AdminPages/AdminDashboard/AdminDashboard'));
+const AdminAllUsers = lazy(()=>import('../pages/AdminPages/AdminAllUsers/AdminAllUsers'));
+const AdminInviteCodes = lazy(()=>import('../pages/adminPages/AdminInviteCodes/AdminInviteCodes'));
 
 
 
@@ -78,9 +87,13 @@ const AppRoutes = () => {
             <Route path='/userPage/:user_id/farms/:farm_id/farmZones/farmZonesDashboard' element={<FarmZoneDashboard/>}/>
             <Route path='/userPage/:user_id/farms/:farm_id/farmZones/:zone_id' element={<OneZone/>}/>
 
-            {/* IncidentsRoutes */}
+            //IncidentsRoutes
             <Route path='/userPage/:user_id/farms/:farm_id/incidentRegister' element={<IncidentsRegister/>}/>
             <Route path='/userPage/:user_id/farms/:farm_id/incidentsDashboard' element={<IncidentsDashboard/>}/>
+
+            //HarvestRoutes
+            <Route path='/userPage/:user_id/farms/:farm_id/farmZones/:zone_id/harvestRegister' element={<HarvestRegister/>}/>
+            <Route path='/userPage/:user_id/farms/:farm_id/harvestDashboard' element={<HarvestDashboard/>}/>
 
             //IrrigationRoutes
             <Route path='/userPage/:user_id/farms/:farm_id/irrigationRecord' element={<IrrigationRecord/>}/>
@@ -95,7 +108,9 @@ const AppRoutes = () => {
 
           <Route element={<PrivateRoutes user={user} requiredType={2}/>}>
             <Route element={<AdminLayout/>}>
-
+              <Route path='/admin/adminDashboard' element={<AdminDashboard/>}/>
+              <Route path='/admin/allUsers' element={<AdminAllUsers/>}/>
+              <Route path='/admin/inviteCodes' element={<AdminInviteCodes/>}/>
             </Route>
           </Route>
 

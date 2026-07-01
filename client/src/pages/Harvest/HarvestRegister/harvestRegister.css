@@ -1,0 +1,164 @@
+.harv-reg {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.harv-reg-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.harv-reg-header h1 {
+  font-size: 1.6rem;
+  color: #e8f5e9;
+  margin: 0;
+}
+
+.harv-back-btn {
+  background: transparent;
+  border: 1px solid #39ff1440;
+  color: #39ff14;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.harv-back-btn:hover {
+  background: #39ff1415;
+}
+
+.harv-reg-form {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.harv-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.harv-field label {
+  color: #a5d6a7;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.harv-required {
+  color: #ff5252;
+  margin-left: 2px;
+}
+
+.harv-optional {
+  color: #6a9a6e;
+  font-size: 0.8rem;
+}
+
+.harv-field input,
+.harv-field textarea {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 10px;
+  color: #e8f5e9;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.harv-field input:focus,
+.harv-field textarea:focus {
+  border-color: #39ff14;
+}
+
+.harv-field input::placeholder,
+.harv-field textarea::placeholder {
+  color: #4a7a4e;
+}
+
+.harv-field textarea {
+  resize: vertical;
+}
+
+.harv-field input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(90deg);
+  cursor: pointer;
+}
+
+.harv-error {
+  color: #ff5252;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.harv-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.harv-cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a5d6a7;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.harv-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.harv-submit-btn {
+  background: linear-gradient(135deg, #39ff14, #1adf00);
+  color: #060d07;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.harv-submit-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.harv-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .harv-reg-form {
+    padding: 1.2rem;
+  }
+
+  .harv-actions {
+    flex-direction: column-reverse;
+  }
+
+  .harv-cancel-btn,
+  .harv-submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

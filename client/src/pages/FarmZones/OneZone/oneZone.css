@@ -138,12 +138,14 @@
 }
 
 .zone-action-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 
 .zone-action-card {
+  width: 220px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
@@ -177,6 +179,132 @@
   color: rgba(232, 245, 233, 0.35);
   text-align: center;
   line-height: 1.4;
+}
+
+/* ── COSECHAS ── */
+.zone-harvest-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zone-harvest-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.zone-harvest-head .zone-actions-title {
+  margin: 0;
+}
+
+.zone-harvest-totals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.zone-harvest-total {
+  font-size: 0.78rem;
+  color: rgba(232, 245, 233, 0.5);
+}
+
+.zone-harvest-total strong {
+  color: #39ff14;
+}
+
+.zone-harvest-empty {
+  font-size: 0.85rem;
+  color: rgba(232, 245, 233, 0.25);
+  text-align: center;
+  padding: 12px 0;
+  margin: 0;
+}
+
+.zone-harvest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.zone-harvest-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.zone-harvest-date {
+  font-size: 0.78rem;
+  color: rgba(232, 245, 233, 0.4);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.zone-harvest-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.zone-harvest-fruit {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e8f5e9;
+}
+
+.zone-harvest-kg {
+  font-size: 0.78rem;
+  color: rgba(232, 245, 233, 0.45);
+}
+
+.zone-harv-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.zone-harv-badge-extra {
+  background: rgba(57, 255, 20, 0.1);
+  color: #39ff14;
+  border: 1px solid rgba(57, 255, 20, 0.25);
+}
+
+.zone-harv-badge-first {
+  background: rgba(0, 200, 255, 0.1);
+  color: #00c8ff;
+  border: 1px solid rgba(0, 200, 255, 0.25);
+}
+
+.zone-harv-badge-second {
+  background: rgba(255, 160, 0, 0.1);
+  color: #ffaa00;
+  border: 1px solid rgba(255, 160, 0, 0.25);
+}
+
+.zone-harv-badge-waste {
+  background: rgba(255, 82, 82, 0.1);
+  color: #ff5252;
+  border: 1px solid rgba(255, 82, 82, 0.25);
+}
+
+.zone-harvest-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #39ff14;
+  white-space: nowrap;
 }
 
 /* ── ERROR ── */

@@ -18,7 +18,7 @@ class IncidentsDal {
                           i.status, i.resolved_at, i.resolution_notes, i.created_at,
                           z.name AS zone_name, z.zone_id
                    FROM irrigation_incidents i
-                   JOIN zones z ON i.zone_id = z.zone_id
+                   LEFT JOIN zones z ON i.zone_id = z.zone_id
                    WHERE z.farm_id = ? AND i.is_deleted = 0
                    ORDER BY i.date DESC`
       return await excuteQuery(sql, [farm_id])

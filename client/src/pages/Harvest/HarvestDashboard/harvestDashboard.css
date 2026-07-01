@@ -1,0 +1,270 @@
+.harv-dash {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 60px 60px;
+}
+
+.harv-dash-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.harv-dash-header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #39ff14, #00ffd1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 4px;
+}
+
+.harv-dash-total {
+  color: rgba(232, 245, 233, 0.5);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.harv-dash-total strong {
+  color: #39ff14;
+}
+
+.harv-dash-new-btn {
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.25);
+  color: #39ff14;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.harv-dash-new-btn:hover {
+  background: rgba(57, 255, 20, 0.15);
+}
+
+.harv-dash-empty {
+  text-align: center;
+  color: rgba(232, 245, 233, 0.3);
+  padding: 60px 0;
+  font-size: 0.95rem;
+}
+
+/* ── TABLA ── */
+.harv-table-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.harv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.harv-table thead tr {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.harv-table th {
+  text-align: left;
+  padding: 14px 16px;
+  color: rgba(232, 245, 233, 0.45);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.harv-table td {
+  padding: 14px 16px;
+  color: #e8f5e9;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.harv-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ── BADGES CALIDAD ── */
+.harv-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.harv-badge-extra {
+  background: rgba(57, 255, 20, 0.1);
+  color: #39ff14;
+  border: 1px solid rgba(57, 255, 20, 0.25);
+}
+
+.harv-badge-first {
+  background: rgba(0, 200, 255, 0.1);
+  color: #00c8ff;
+  border: 1px solid rgba(0, 200, 255, 0.25);
+}
+
+.harv-badge-second {
+  background: rgba(255, 160, 0, 0.1);
+  color: #ffaa00;
+  border: 1px solid rgba(255, 160, 0, 0.25);
+}
+
+.harv-badge-waste {
+  background: rgba(255, 82, 82, 0.1);
+  color: #ff5252;
+  border: 1px solid rgba(255, 82, 82, 0.25);
+}
+
+/* ── BOTÓN EDITAR ── */
+.harv-edit-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e8f5e9;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.harv-edit-btn:hover {
+  border-color: rgba(57, 255, 20, 0.35);
+  color: #39ff14;
+}
+
+/* ── MODAL ── */
+.harv-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.harv-modal {
+  background: #0d1f0f;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.harv-modal h2 {
+  font-size: 1.2rem;
+  color: #e8f5e9;
+  margin: 0;
+}
+
+.harv-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.harv-modal-field label {
+  color: #a5d6a7;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.harv-modal-field input,
+.harv-modal-field textarea,
+.harv-modal-field select {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 10px;
+  color: #e8f5e9;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.harv-modal-field input:focus,
+.harv-modal-field textarea:focus,
+.harv-modal-field select:focus {
+  border-color: #39ff14;
+}
+
+.harv-modal-field select option {
+  background: #0d1f0f;
+  color: #e8f5e9;
+}
+
+.harv-modal-field textarea {
+  resize: vertical;
+}
+
+.harv-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.harv-cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a5d6a7;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.harv-cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.harv-submit-btn {
+  background: linear-gradient(135deg, #39ff14, #1adf00);
+  color: #060d07;
+  border: none;
+  padding: 0.65rem 1.8rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.harv-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .harv-dash {
+    padding: 90px 16px 40px;
+  }
+
+  .harv-table th,
+  .harv-table td {
+    padding: 12px 10px;
+  }
+
+  .harv-modal {
+    margin: 1rem;
+  }
+}

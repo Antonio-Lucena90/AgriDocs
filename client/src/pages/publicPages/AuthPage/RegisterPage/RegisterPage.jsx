@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { registerSchema } from '../../../schemas/RegisterSchema.js';
+import { registerSchema } from '../../../../schemas/RegisterSchema.js';
 import { ZodError } from 'zod';
-import { fetchData } from '../../../helpers/axiosHelpers.js';
+import { fetchData } from '../../../../helpers/axiosHelpers.js';
 import './register.css';
 
 const initialValue = {
@@ -10,7 +10,8 @@ const initialValue = {
   last_name: '',
   user_name: '',
   password: '',
-  farm_name: ''
+  farm_name: '',
+  invite_code: '',
 };
 
 const RegisterPage = () => {
@@ -42,7 +43,7 @@ const RegisterPage = () => {
         if (error.response?.data?.errno === 1062) {
           setFetchError('Nombre de usuario ya en uso')
         } else {
-          setFetchError('Ups, hay un error chungo');
+          setFetchError(error.response?.data?.message || 'Ups, hay un error chungo');
         }
       }
     }
@@ -135,6 +136,21 @@ const RegisterPage = () => {
               onChange={handleChange}
             />
             {valErrors?.farm_name && <p className="field-error">{valErrors.farm_name}</p>}
+          </div>
+
+          <div className="field-group">
+            <label className="field-label" htmlFor="reg-code">Código de invitación</label>
+            <input
+              id="reg-code"
+              className="field-input field-input-code"
+              type="text"
+              placeholder="Ej: A1B2C3D4E5"
+              name="invite_code"
+              value={register.invite_code}
+              onChange={handleChange}
+              autoComplete="off"
+            />
+            {valErrors?.invite_code && <p className="field-error">{valErrors.invite_code}</p>}
           </div>
 
           {fetchError && <p className="auth-error">{fetchError}</p>}

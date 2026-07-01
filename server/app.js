@@ -6,6 +6,7 @@ import logger from 'morgan';
 import { fileURLToPath } from 'url';
 
 import usersRouter from './modules/user/user.routes.js';
+import adminRouter from './modules/admin/admin.routes.js';
 import farmRouter from './modules/farm/farm.routes.js';
 import farmZoneRouter from './modules/farmZones/farmZones.routes.js';
 import irrigationRouter from './modules/irrigation/irrigation.routes.js';
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/api/user', usersRouter); 
+app.use('/api/admin', adminRouter); 
 app.use('/api/farm', farmRouter); 
 app.use('/api/farmZone', farmZoneRouter); 
 app.use('/api/irrigation', irrigationRouter); 

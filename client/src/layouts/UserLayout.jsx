@@ -1,5 +1,6 @@
 import { Outlet } from "react-router"
 import { NavbarUser } from "../components/NavbarUser/NavbarUser"
+import { WebFooter } from "../components/WebFooter/WebFooter"
 
 
 const UserLayaout = () => {
@@ -12,7 +13,7 @@ const UserLayaout = () => {
         <Outlet/>
       </main>
       <footer>
-
+        <WebFooter/>
       </footer>
     </>
   )

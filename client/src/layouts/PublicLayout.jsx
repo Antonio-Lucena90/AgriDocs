@@ -1,5 +1,6 @@
 import { Outlet } from "react-router"
 import NavbarPublic from "../components/NavbarPublic/NavbarPublic"
+import { WebFooter } from "../components/WebFooter/WebFooter"
 
 const PublicLayout = () => {
   return (
@@ -17,7 +18,9 @@ const PublicLayout = () => {
       <main>
         <Outlet />
       </main>
-      <footer />
+      <footer>
+        <WebFooter/>
+      </footer>
     </>
   )
 }

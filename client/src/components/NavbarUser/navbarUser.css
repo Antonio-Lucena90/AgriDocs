@@ -69,6 +69,51 @@
   transform: scale(1.08);
 }
 
+/* Dropdown Registros */
+.nav-dropdown-registros .dropdown-toggle {
+  color: rgba(232, 245, 233, 0.6) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 4px 14px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-dropdown-registros .dropdown-toggle:hover,
+.nav-dropdown-registros.show .dropdown-toggle {
+  color: #39ff14 !important;
+  background: rgba(57, 255, 20, 0.06);
+}
+
+.nav-dropdown-registros .dropdown-toggle::after {
+  border-top-color: currentColor;
+}
+
+.nav-dropdown-registros .dropdown-menu {
+  background: rgba(6, 13, 7, 0.92);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  border-radius: 12px;
+  padding: 6px;
+  margin-top: 8px;
+  min-width: 180px;
+}
+
+.nav-dropdown-registros .dropdown-item {
+  color: rgba(232, 245, 233, 0.7);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-dropdown-registros .dropdown-item:hover,
+.nav-dropdown-registros .dropdown-item.active {
+  color: #39ff14;
+  background: rgba(57, 255, 20, 0.07);
+}
+
 /* Hamburger icon (mobile) */
 .navbar-user .navbar-toggler {
   border-color: rgba(57, 255, 20, 0.3);

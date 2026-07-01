@@ -1,11 +1,11 @@
 import { useContext } from 'react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router'
-import { fetchData } from '../../../helpers/axiosHelpers.js'
-import { AuthContext } from '../../../contexts/AuthContext/AuthContext.js'
-import {ZodError} from 'zod'; 
+import { fetchData } from '../../../../helpers/axiosHelpers.js'
+import { AuthContext } from '../../../../contexts/AuthContext/AuthContext.js'
+import {ZodError} from 'zod';
 import './login.css'
-import { loginSchema } from '../../../schemas/LoginSchema.js'
+import { loginSchema } from '../../../../schemas/LoginSchema.js'
 
 const initialValue = {
   user_name: '',
@@ -40,7 +40,8 @@ const LoginPage = () => {
       localStorage.setItem('token', token)
       setUser(resUser.data.user);
       setToken(token);
-      navigate('/selectFarm');
+      const role = resUser.data.user.role
+      navigate(role === 2 ? '/admin/adminDashboard' : '/selectFarm')
 
     } catch (error) {
           if(error instanceof ZodError){
